@@ -1,2 +1,3 @@
-echo "Nothing to see here yet."
-echo "Next step will be to start extracting stuff I like from oh-my-zsh..."
+for conf in "$bundle_path"/*.zsh; do
+  source "$conf"
+done
