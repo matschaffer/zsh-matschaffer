@@ -17,5 +17,8 @@ if ! [[ -d ~/.zsh/bundle/zsh-matschaffer ]]; then
 fi
 
 test -f ~/.zshrc && mv ~/.zshrc ~/.zshrc.bak
-
 ln -s ~/.zsh/bundle/zsh-matschaffer/zshrc ~/.zshrc
+
+source ~/.zshrc
+
+BundleInstall
