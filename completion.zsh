@@ -21,6 +21,8 @@ expand-or-complete-with-dots() {
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
-bindkey -M menuselect '^o' accept-and-infer-next-history
-
 zstyle ':completion:*:*:*:*:*' menu select
+
+# Use caching so that commands like apt and dpkg complete are useable
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path "$bundle_path/cache"
