@@ -1,0 +1,2 @@
+alias knife="nocorrect knife "
+
