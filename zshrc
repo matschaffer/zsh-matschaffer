@@ -8,3 +8,5 @@ Bundle 'matschaffer/zsh-heroku'
 
 Bundle 'matschaffer/zsh-theme-gnzh'
 Bundle 'matschaffer/zsh-matschaffer'
+
+LoadBundles
