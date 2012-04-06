@@ -34,3 +34,8 @@ ssh_key_upload() {
   cat "$publicKey" | ssh "${destination}" "mkdir -p \$HOME/${dotSsh}; chmod 700 \$HOME/${dotSsh}; \
                                            cat >> \$HOME/${authorizedKeys}; chmod 600 \$HOME/${authorizedKeys}"
 }
+
+# OS X command to show all listening ports
+listening_ports() {
+  sudo lsof -P -i -n | grep LISTEN
+}
