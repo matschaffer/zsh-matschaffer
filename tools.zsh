@@ -44,3 +44,8 @@ ssh_key_upload() {
 listening_ports() {
   sudo lsof -P -i -n | grep LISTEN
 }
+
+# Gets the Nth whitespace-deliniated field of stdin
+nthfield() {
+  awk "{ print \$$1 }"
+}
