@@ -3,6 +3,11 @@ bgrep() {
   grep -r "$@" $(bundle show --paths)
 }
 
+# Bundle find, search for a file in bundled gems
+bfind() {
+  find $(bundle show --paths) -iname "*$1*"
+}
+
 # Find files or directories like $1
 # Shortcut for: find <dir> -name *<search>*
 flike() {
