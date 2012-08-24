@@ -49,3 +49,9 @@ listening_ports() {
 nthfield() {
   awk "{ print \$$1 }"
 }
+
+# Makes a directory (or recursive) and cds into it
+take() {
+  mkdir -p $1
+  cd $1
+}
