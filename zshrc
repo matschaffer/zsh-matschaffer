@@ -5,6 +5,7 @@ Bundle 'matschaffer/zsh-git'
 Bundle 'matschaffer/zsh-rvm'
 Bundle 'matschaffer/zsh-autojump'
 Bundle 'matschaffer/zsh-heroku'
+Bundle 'matschaffer/zsh-grails'
 
 Bundle 'matschaffer/zsh-theme-gnzh'
 Bundle 'matschaffer/zsh-matschaffer'
