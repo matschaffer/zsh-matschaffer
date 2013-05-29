@@ -1,4 +1,6 @@
-export WORKSPACE=/Users/matschaffer/p4/mats_lgml-matschaffer_8039/depot
+export WORKSPACE=/Users/matschaffer/p4/matschaffer
 
-export P4CLIENT=mats_lgml-matschaffer_8039
-export P4USER=mats
+export P4CLIENT=matschaffer
+export P4USER=matschaffer
+
+export PATH="$HOME/netflix/nf/bin:$PATH"
