@@ -19,3 +19,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/matschaffer/.gvm/bin/gvm-init.sh" ]] && source "/Users/matschaffer/.gvm/bin/gvm-init.sh"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
