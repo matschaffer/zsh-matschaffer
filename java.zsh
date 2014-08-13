@@ -1,8 +1,8 @@
-export JAVA_HOME=$(/usr/libexec/java_home)
+alias java_ls='/usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d[,_]" | cut -d , -f 1 | colrm 1 4 | grep -v Home'
 
-use_java6() {
-  export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-  export PATH="$JAVA_HOME/bin:$PATH"
+function java_use() {
+    export JAVA_HOME=$(/usr/libexec/java_home -v $1)
+    export PATH=$JAVA_HOME/bin:$PATH
 }
 
-export PATH="/usr/local/Cellar/jruby/1.7.4/libexec/bin:$PATH"
+java_use 1.7
