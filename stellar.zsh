@@ -1,1 +1,1 @@
-eval "$(/Users/mat/stellar/str/bin/str init -)"
+eval "$($HOME/stellar/str/bin/str init -)"
