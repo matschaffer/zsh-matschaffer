@@ -55,3 +55,14 @@ take() {
   mkdir -p $1
   cd $1
 }
+
+# Makes a gif from a mov
+# Requires ffmpeg & imagemagick
+# Courtesy of https://gist.github.com/dergachev/4627207
+to_gif() {
+  INPUT="$1"
+  DIR=`dirname "${INPUT}"`
+  FILENAME=`basename "${INPUT}"`
+  NAME=${FILENAME%.*}
+  ffmpeg -loglevel error -i "${INPUT}" -vf scale=600:-1 -r 7 -f image2pipe -vcodec ppm - | convert -delay 7 +dither -layers Optimize -loop 0 - "${DIR}/${NAME}.gif"
+}
