@@ -64,5 +64,5 @@ to_gif() {
   DIR=`dirname "${INPUT}"`
   FILENAME=`basename "${INPUT}"`
   NAME=${FILENAME%.*}
-  ffmpeg -loglevel error -i "${INPUT}" -vf scale=600:-1 -r 7 -f image2pipe -vcodec ppm - | convert -delay 7 +dither -layers Optimize -loop 0 - "${DIR}/${NAME}.gif"
+  ffmpeg -loglevel error -i "${INPUT}" -vf scale=600:-1 -r 7 -f image2pipe -vcodec ppm - | convert -delay 14 +dither -layers Optimize -loop 0 - "${DIR}/${NAME}.gif"
 }
