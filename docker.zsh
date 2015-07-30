@@ -10,11 +10,13 @@ reset_boot2docker() {
 }
 
 dm() {
-  if [[ $1 == "ps" ]]; then
-    docker-machine ls -q | xargs -n1 -I {} bash -c 'eval $(docker-machine env {}); echo {}; docker ps -a'
-  elif [[ $1 == "rm" ]]; then
+  if [[ $1 == "rm" ]]; then
     docker-machine ls -q | xargs -n1 -I {} bash -c 'eval $(docker-machine env {}); docker ps -aq | xargs -n1 docker rm -f -v'
   else
-    docker-machine "$@"
+    for M in $(docker-machine ls -q); do
+      echo docker-machine: $M >&2
+      eval $(docker-machine env "$M")
+      docker "$@"
+    done
   fi
 }
