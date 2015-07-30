@@ -4,3 +4,5 @@ if [[ "$TERM" == "screen" ]]; then
 fi
 
 export CLICOLOR=true
+
+export LC_CTYPE="en_US.UTF-8"
