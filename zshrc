@@ -1,23 +1,25 @@
-source "$HOME/.zsh/bundle/zundle/rc"
+source "$HOME/.antigen/antigen/antigen.zsh"
 
-Bundle 'matschaffer/zsh-history'
-Bundle 'matschaffer/zsh-git'
-Bundle 'matschaffer/zsh-rvm'
-Bundle 'matschaffer/zsh-autojump'
-Bundle 'matschaffer/zsh-heroku'
-Bundle 'matschaffer/zsh-groovy'
-Bundle 'matschaffer/zsh-vagrant'
-#Bundle 'matschaffer/zsh-grails'
+antigen use oh-my-zsh
 
-Bundle 'matschaffer/zsh-theme-gnzh'
-Bundle 'matschaffer/zsh-matschaffer'
+antigen bundles <<EOBUNDLES
+  ssh-agent
+  autojump
+  git
+  npm
+  command-not-found
 
-LoadBundles
+  zsh-users/zsh-syntax-highlighting
+  mafredri/zsh-async
+  sindresorhus/pure
+  matschaffer/zsh-matschaffer
+EOBUNDLES
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# Shift-tab to force complete for files
+zle -C complete complete-word complete-files
+bindkey '^[[Z' complete
+complete-files () { compadd - $PREFIX* }
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/matschaffer/.gvm/bin/gvm-init.sh" ]] && source "/Users/matschaffer/.gvm/bin/gvm-init.sh"
+antigen apply
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
