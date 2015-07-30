@@ -1,3 +1,5 @@
+alias tailf="tail -f"
+
 # Retry a command till it succeeds (from http://bit.ly/1GnOAhv)
 retry() {
   local n=1
